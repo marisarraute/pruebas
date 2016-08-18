@@ -1,0 +1,44 @@
+$ruta: "./img/";
+@each $redes in facebook, twitter, youtube, gmas, wordpress, sound, rss {
+  li.#{$redes}{
+    background: url(./img/#{$redes}.jpg);
+  }
+}
+.redes {
+  a{
+    display: table;
+  }
+  li{
+    width: 65px;
+    height: 65px;
+    text-indent:-999999px;
+  }
+  li:hover {
+    opacity:.5;
+  }
+}
+
+@each $header, $size in (h1: 2em, h2:1.5em,h3:1.2em){
+  #{$header}{
+    font-size: $size;
+  }
+}
+
+$i: 6;
+@while $i >0 {
+  .item-#{$i} { width: 2em *$i; }
+  $i: $i - 2;
+}
+
+$vari : 1;
+@while $vari <= 10{
+  .selector#{$vari} {
+    width: 10px * $vari;
+    height: 15px;
+    border:1px solid #aaa;
+    background: darken(#fff, $vari);
+    margin-bottom: #{$vari}px;
+    
+  }
+  $vari: $vari + 1;
+}
